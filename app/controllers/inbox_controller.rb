@@ -12,7 +12,13 @@ class InboxController < ApplicationController
   end
 
   def create
-    p params
+    params[:message][:from_github_login] = params[:message].delete(:to)
+    @message = Message.new(params[:message].merge(:mailbox => "sent"))
+    if @message.save
+      redirect_to(inbox_path(@message))
+    else
+      render :action => "new"
+    end
   end
 
   def create_reply
