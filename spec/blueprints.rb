@@ -1,5 +1,7 @@
 # Use 'Ruby Machinst.tmbundle' Cmd+B to generate blueprints from class names
-require "faker"
+require 'machinist/active_record'
+require 'sham'
+require 'faker'
 
 Sham.define do
   name              { Faker::Name.name }
