@@ -10,6 +10,7 @@
     %script{ :type => "text/javascript", :src => "/javascripts/bundle.js" }
     %script{ :type => "text/javascript" }
       github_user = 'drnic'
+    %link{ :href => "/stylesheets/form.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
     = javascript_include_tag :all
     = yield(:head)
   #_firebugConsole{ :FirebugVersion => "1.4.3b1", :style => "display: none;" }

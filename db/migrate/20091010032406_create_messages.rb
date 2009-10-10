@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :from_github_login
       t.datetime :sent_at
       t.text :message
-      t.string :github_id
+      t.string :github_message_number
 
       t.timestamps
     end
