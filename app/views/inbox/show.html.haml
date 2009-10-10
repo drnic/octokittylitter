@@ -23,7 +23,7 @@
     %label{ :for => "reply_body" }
       Reply:
     %textarea#reply_body{ :name => "body" }
-    %input{ :name => "message_id", :type => "hidden", :value => "265609" }
+    %input{ :name => "message_id", :type => "hidden", :value => "#{@message.github_message_number}" }
     .controls
       .submits
         %input{ :type => "submit", :value => "Send" }

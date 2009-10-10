@@ -22,4 +22,8 @@ class Message < ActiveRecord::Base
       self.sent_at = eval(expression)
     end
   end
+  
+  def to_param
+    github_message_number.to_s
+  end
 end

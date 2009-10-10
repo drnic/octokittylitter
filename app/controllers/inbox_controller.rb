@@ -15,6 +15,16 @@ class InboxController < ApplicationController
   end
 
   def create_reply
+    reply_number = params[:message_id].to_i
+    @original_message = Message.find_by_github_message_number(reply_number)
+    @message = Message.create(
+      :message               => params[:body], 
+      :from_github_login     => @original_message.from_github_login,
+      :subject               => @original_message.subject,
+      :mailbox               => "sent",
+      :unread                => false,
+      :github_message_number => reply_number + 1)
+    redirect_to(inbox_path(@message))
   end
 
   def sent

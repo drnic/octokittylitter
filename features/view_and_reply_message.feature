@@ -11,9 +11,9 @@ Feature: View and reply message
     When I am on the inbox page
     And I follow "Rails 3.0 released!"
     Then I should see:
-      | dhh     | said | about 12 hours | ago: | Rails 3.0 released |
+      | dhh | said | about 12 hours | ago: | Rails 3.0 released |
     When I fill in "Reply:" with "Thanks for that!"
     And I press "Send"
     And I follow "Sent Messages"
     Then I should see:
-      | dhh     | said 0 minutes ago: | Thanks for that! |
+      | You sent | dhh | a | message | less than a minute | ago | Thanks for that! |
