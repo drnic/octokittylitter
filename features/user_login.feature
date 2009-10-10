@@ -5,8 +5,8 @@ Feature: User login
 
   Scenario: Login successfully
     Given the following User:
-      | login | password |
-      | drnic | password |
+      | login | password | password_confirmation |
+      | drnic | password | password              |
     When I am on the home page
     And I follow "Login"
     Then I should not see "drnic"
