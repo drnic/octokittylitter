@@ -3,6 +3,10 @@ class InboxController < ApplicationController
     @messages = Message.inbox.paginate :page => params[:page], :per_page => 10
   end
 
+  def sent
+    @messages = Message.sent_mailbox.paginate :page => params[:page], :per_page => 10
+  end
+
   def show
     @message = Message.find_by_github_message_number(params[:id])
     render :action => :show, :layout => "envelope"
@@ -32,10 +36,6 @@ class InboxController < ApplicationController
       :unread                => false,
       :github_message_number => reply_number + 1)
     redirect_to(inbox_path(@message))
-  end
-
-  def sent
-    @messages = Message.sent_mailbox.paginate :page => params[:page], :per_page => 10
   end
 
 end
