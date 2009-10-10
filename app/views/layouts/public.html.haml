@@ -1,0 +1,118 @@
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
+    %title
+      Log in - GitHub
+    %link{ :href => "/stylesheets/bundle.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %script{ :src => "/javascripts/jquery.js", :type => "text/javascript" }
+    %script{ :type => "text/javascript", :src => "/javascripts/bundle.js" }
+    %script{ :type => "text/javascript" }
+      github_user = null
+    = javascript_include_tag :all
+    = yield(:head)
+  #_firebugConsole{ :FirebugVersion => "1.4.3b1", :style => "display: none;" }
+  %body
+    #main
+      #header.basic
+        .site
+          .logo
+            %a{ :href => "/" }
+              %img{ :src => "/images/logov3.png", :alt => "github" }
+          .topsearch
+            %form#top_search_form{ :action => "/search", :method => "get" }
+              %a.advanced-search{ :href => "/search", :title => "Advanced Search" }
+                Advanced Search
+              %input.search.repo_autocompleter.notnative.placeholder{ :results => "5", :name => "q", :placeholder => "Search GitHub\342\200\246", :type => "search" }
+              <input value="Search" ,="" class="button" type="submit">
+              %input{ :name => "type", :type => "hidden", :value => "Everything" }
+              %input{ :name => "repo", :type => "hidden", :value => "" }
+              %input{ :name => "langOverride", :type => "hidden", :value => "" }
+              %input{ :name => "start_value", :type => "hidden", :value => "1" }
+            %ul.nav.logged_out
+              %li
+                %a{ :href => "/" }
+                  Home
+              %li.pricing
+                %a{ :href => "/plans" }
+                  Pricing and Signup
+              %li
+                %a{ :href => "/popular/forked" }
+                  Explore GitHub
+              %li
+                %a{ :href => "/blog" }
+                  Blog
+              %li
+                %a{ :href => "/login" }
+                  Login
+      .site
+        = yield
+      .push
+    #footer
+      .site
+        .info
+          .links
+            %a{ :href => "/blog" }
+              %b
+                Blog
+            |
+            %a{ :href => "http://support.github.com/" }
+              Support
+            |
+            %a{ :href => "/training" }
+              Training
+            |
+            %a{ :href => "/contact" }
+              Contact
+            |
+            %a{ :href => "http://develop.github.com/" }
+              API
+            |
+            %a{ :href => "http://twitter.com/github" }
+              Status
+            |
+            %a{ :href => "http://twitter.com/github" }
+              GitHub on Twitter
+            |
+            %a{ :href => "/guides/home" }
+              Help
+          .company
+            %span#_rrt{ :title => "0.01026s from fe1.rs.github.com" }
+              GitHub
+            ™
+            is
+            %a{ :href => "http://logicalawesome.com/" }
+              Logical Awesome
+            ©2009 |
+            %a{ :href => "/site/terms" }
+              Terms of Service
+            |
+            %a{ :href => "/site/privacy" }
+              Privacy Policy
+        .sponsor
+          %div
+            Powered by the
+            %a{ :href => "http://www.rackspace.com/" }
+              Dedicated
+              Servers
+            and
+            %br
+            %a{ :href => "http://www.rackspacecloud.com/" }
+              Cloud
+              Computing
+            of Rackspace Hosting
+            %span
+              ®
+          %a{ :href => "http://www.rackspace.com/" }
+            %img{ :src => "/images/rackspace_logo.png", :alt => "Dedicated Server" }
+    #coming_soon{ :style => "display: none;" }
+      This feature is coming soon.  Sit tight!
+    %script{ :type => "text/javascript" }
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    %script{ :type => "text/javascript", :src => "/javascripts/ga.js" }
+    %script{ :type => "text/javascript" }
+      var pageTracker = _gat._getTracker("UA-3769691-2");
+      pageTracker._initData();
+      pageTracker._trackPageview();

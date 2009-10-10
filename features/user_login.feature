@@ -6,14 +6,19 @@ Feature: User login
   Scenario: Login successfully
     Given the following User:
       | login | password | password_confirmation |
-      | drnic | password | password              |
+      | drnic | secret   | secret                |
     When I am on the home page
     And I follow "Login"
     Then I should not see "drnic"
     When I fill in "login" with "drnic"
-    And I fill in "password" with "password"
+    And I fill in "password" with "secret"
     And I press "Log in"
     Then I should see "drnic"
   
+  Scenario: Login unsuccessfully
+    When I am on the home page
+    And I follow "Login"
+    And I press "Log in"
+    Then I should see "Incorrect login or password."
   
   

@@ -1,9 +1,3 @@
-%p
-  You are using named yields. Here are examples how to use them:
-- content_for :head do
-  %script
-/
-  original body content
 #login.standard_form
   %form{ :action => "/session", :method => "post" }
     %input{ :name => "return_to", :type => "hidden", :value => "" }
@@ -11,6 +5,8 @@
       Login
       %a{ :href => "http://github.com/plans" }
         (Pricing and Signup)
+    - if flash[:notice]
+      .error_box= flash[:notice]
     %label{ :for => "login" }
       Login or Email
       %br
