@@ -2,6 +2,10 @@ Given /^I have no messages$/ do
   Message.destroy_all
 end
 
+Given /^I have (\d+) messages in my "([^\"]*)" mailbox$/ do |count, mailbox|
+  count.to_i.times {|n| Message.make(:mailbox => mailbox)}
+end
+
 When /^I add the following messages to "([^\"]*)" mailbox:$/ do |mailbox, table|
   table.hashes.map do |message_attributes|
     visit path_to('the new message form')
