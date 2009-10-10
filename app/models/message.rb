@@ -7,6 +7,7 @@ class Message < ActiveRecord::Base
   
   validates_presence_of :mailbox
   validates_presence_of :from_github_login
+  validates_presence_of :subject
   validates_presence_of :message
   validates_presence_of :github_message_number
   validates_format_of :sent_time_ago, :with => /^(|\d+[\. ](minutes?|hours?|days?)[\. ]ago)$/

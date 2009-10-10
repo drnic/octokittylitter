@@ -14,6 +14,7 @@
         .message
           %p
             %a.subject{ :href => "http://github.com/inbox/#{message.github_message_number}#reply" }
+              = message.subject
           %p
             %a.body{ :href => "http://github.com/inbox/#{message.github_message_number}#reply" }
               = message.message

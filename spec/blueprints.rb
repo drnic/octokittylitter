@@ -9,6 +9,7 @@ Sham.define do
   last_name         { Faker::Name.last_name }
   company_name      { Faker::Company.name }
   login             { Faker::Internet.user_name.gsub(/W/, '')[0..14] } # max 15 chars
+  subject           { Faker::Lorem.sentence }
   message           { Faker::Lorem.sentence }
   description       { Faker::Lorem.sentence }
   email             { Faker::Internet.email }

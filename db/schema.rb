@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091010051327) do
+ActiveRecord::Schema.define(:version => 20091010085924) do
 
   create_table "messages", :force => true do |t|
     t.string   "from_github_login"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20091010051327) do
     t.datetime "updated_at"
     t.boolean  "unread",                :default => true
     t.string   "mailbox"
+    t.string   "subject"
   end
 
   create_table "sessions", :force => true do |t|
