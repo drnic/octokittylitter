@@ -26,7 +26,7 @@ class Message < ActiveRecord::Base
   
   def increment_github_message_number
     last_message = Message.last 
-    next_number = last_message ? last_message.github_message_number + 1 : 1
+    next_number = last_message ? last_message.github_message_number.to_i + 1 : 1
     self.github_message_number = next_number
   end
   
