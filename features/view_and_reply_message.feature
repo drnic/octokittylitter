@@ -14,6 +14,7 @@ Feature: View and reply message
       | dhh | said | about 12 hours | ago: | Rails 3.0 released |
     When I fill in "Reply:" with "Thanks for that!"
     And I press "Send"
+    Then I should see "Your message has been sent."
     And I follow "Sent Messages"
     Then I should see:
       | You sent | dhh | a | message | less than a minute | ago | Thanks for that! |

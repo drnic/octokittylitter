@@ -3,6 +3,9 @@
     = will_paginate @messages
 
   %h1 Inbox
+  - if flash[:notice]
+    .notification
+      = flash[:notice]
   != render :partial => 'messages'
 
   %div{ :style => "float: right;" }

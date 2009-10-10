@@ -19,7 +19,8 @@ class InboxController < ApplicationController
     params[:message][:from_github_login] = params[:message].delete(:to)
     @message = Message.new(params[:message].merge(:mailbox => "sent"))
     if @message.save
-      redirect_to(inbox_path(@message))
+      flash[:notice] = "Your message has been sent."
+      redirect_to(inbox_index_path)
     else
       render :action => "new"
     end
@@ -35,7 +36,8 @@ class InboxController < ApplicationController
       :mailbox               => "sent",
       :unread                => false,
       :github_message_number => reply_number + 1)
-    redirect_to(inbox_path(@message))
+    flash[:notice] = "Your message has been sent."
+    redirect_to(inbox_index_path)
   end
 
 end

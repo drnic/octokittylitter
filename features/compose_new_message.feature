@@ -10,6 +10,7 @@ Feature: Compose new message
     And I fill in "Subject:" with "Sending a message"
     And I fill in "message_body" with "This is the body of the message"
     And I press "Send"
+    Then I should see "Your message has been sent."
     And I follow "Sent Messages"
     Then I should see:
       | You sent | defunkt | a | message | less than a minute | ago | Sending a message | This is the body of the message |
