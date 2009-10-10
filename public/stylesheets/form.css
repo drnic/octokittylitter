@@ -1,6 +1,7 @@
 /* Decent styling of formtastic forms */
 form fieldset {
   border: 0;
+  margin-top: 1em;
 }
 
 form li {
@@ -12,11 +13,20 @@ form li {
   clear: both;
 }
 
+form li input, form li textarea {
+  width: 300px;
+}
+
 form label {
   display: block;
   text-align: right;
-  width: 150px;
+  width: 12em;
   float: left;
   position: relative;
   top: 6px;
   padding-right: 6px; }
+
+form .inline-errors {
+  display: inline;
+  color: red;
+}

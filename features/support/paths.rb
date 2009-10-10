@@ -12,7 +12,8 @@ module NavigationHelpers
       '/'
     when /the inbox page/
       '/inbox'
-
+    when /the new message form/
+      '/messages/new'
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

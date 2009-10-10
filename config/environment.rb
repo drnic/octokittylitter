@@ -14,4 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'giraffesoft-resource_controller', :lib => 'resource_controller', :source => 'http://gems.github.com', :version => '>= 0.6.5'
 
   config.time_zone = 'UTC'
+
+  # fake github never sends email
+  config.action_mailer.delivery_method = :test
 end
