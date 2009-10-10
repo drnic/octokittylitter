@@ -19,71 +19,45 @@
       #header.basic
         .site
           .logo
-            %a{ :href => "https://github.com/" }
+            %a{ :href => "/" }
               %img{ :src => "/images/logov3.png", :alt => "github" }
           .userbox
             .inner
               .avatarname
-                %a{ :href => "http://github.com/drnic" }
+                %a{ :href => "/" }
                   %img{ :src => "/images/cb2b768a5e546b24052ea03334e43676.jpg", :height => "20", :alt => "", :width => "20" }
-                %a.name{ :href => "http://github.com/drnic" }
+                %a.name{ :href => "/" }
                   drnic
               %ul.usernav
                 %li
-                  %a{ :href => "https://github.com/" }
+                  %a{ :href => "/" }
                     Dashboard
                 %li
-                  %a{ :href => "http://github.com/inbox" }
+                  %a{ :href => "/inbox" }
                     Inbox
-                  %a.unread_count.new_messages{ :href => "http://github.com/inbox" }
-                    123
+                  %a.unread_count.new_messages{ :href => "/inbox" }
+                    = Message.unread.count
                 %li
-                  %a{ :href => "https://github.com/account" }
+                  %a{ :href => "/" }
                     Account Settings
                 %li
-                  %a{ :href => "http://github.com/logout" }
+                  %a{ :href => "/" }
                     Log Out
-          /
-            \/.userbox
-          .topsearch
-            %form#top_search_form{ :action => "/search", :method => "get" }
-              %a.advanced-search{ :href => "http://github.com/search", :title => "Advanced Search" }
-                Advanced Search
-              %input.search.repo_autocompleter.notnative.placeholder.ac_input{ :results => "5", :name => "q", :placeholder => "Search GitHub\342\200\246", :autocomplete => "off", :type => "search" }
-              <input value="Search" ,="" class="button" type="submit">
-              %input{ :name => "type", :type => "hidden", :value => "Everything" }
-              %input{ :name => "repo", :type => "hidden", :value => "" }
-              %input{ :name => "langOverride", :type => "hidden", :value => "" }
-              %input{ :name => "start_value", :type => "hidden", :value => "1" }
-            %ul.nav
-              %li
-                %a{ :href => "http://github.com/repositories" }
-                  Explore GitHub
-              %li
-                %a{ :href => "http://gist.github.com/" }
-                  Gist
-              %li
-                %a{ :href => "http://github.com/blog" }
-                  Blog
-              %li
-                %a{ :href => "http://help.github.com/" }
-                  Help
       .site
         #inbox
           .actions
             .compose
               %p
-                %a{ :href => "http://github.com/inbox/new" }
+                %a{ :href => "/inbox/new" }
                   %img{ :src => "/images/message.png", :alt => "compose" }
                   %span
                     Compose Message
             .boxes
               %ul
                 %li
-                  %a.new{ :href => "http://github.com/inbox" }
-                    = yield(:inbox_link) || render_or_default('inbox_link')
+                  %a.new{ :href => "/inbox" }= "Inbox (#{Message.unread.count})"
                 %li
-                  %a{ :href => "http://github.com/inbox/sent" }
+                  %a{ :href => "/inbox/sent" }
                     Sent Messages
           .list
             = yield

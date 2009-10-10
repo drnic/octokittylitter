@@ -1,6 +1,9 @@
 class Message < ActiveRecord::Base
   attr_accessor :sent_time_ago
   
+  named_scope :unread, :conditions => { :unread => true }
+  
+  
   validates_presence_of :from_github_login
   validates_presence_of :message
   validates_presence_of :github_message_number
