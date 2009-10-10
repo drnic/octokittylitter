@@ -11,6 +11,6 @@ Feature: Setup inbox
     | 269380                | defunkt           | 25 hours ago  | No more rubygems.\nLong live Rubyforge. | false  |
     And I am on the inbox page
     Then I should see:
-      | dhh     | sent you a message | 12 hours ago | Rails 3.0 released |
-      | defunkt | sent you a message | 1 day ago    | No more rubygems   |
+      | dhh     | sent you a | message | 12 hours | Rails 3.0 released |
+      | defunkt | sent you a | message | 1 day    | No more rubygems   |
   

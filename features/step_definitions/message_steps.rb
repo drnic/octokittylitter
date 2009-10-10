@@ -10,5 +10,4 @@ When /^I add the following messages:$/ do |table|
     end
     click_button "Create Message"
   end
-  Message.all.each { |m| p m }
 end

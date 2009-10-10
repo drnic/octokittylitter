@@ -7,7 +7,7 @@ class Message < ActiveRecord::Base
   validates_format_of :sent_time_ago, :with => /^(|\d+[\. ](minutes?|hours?|days?)[\. ]ago)$/
 
   before_save :calculate_sent_at
-  
+
   def calculate_sent_at
     if sent_time_ago.blank?
       self.sent_at = 0.days.ago
