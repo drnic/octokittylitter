@@ -1,5 +1,7 @@
 require "spec/blueprints"
 
+User.make(:login => "drnic")
+
 def regenerate_seeds(klass, count)
   klass.delete_all
   count.times {|n| klass.make}
@@ -7,3 +9,4 @@ def regenerate_seeds(klass, count)
 end
 
 regenerate_seeds(Message, 100)
+
