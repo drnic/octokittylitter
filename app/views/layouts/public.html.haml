@@ -12,7 +12,6 @@
       github_user = null
     = javascript_include_tag :all
     = yield(:head)
-  #_firebugConsole{ :FirebugVersion => "1.4.3b1", :style => "display: none;" }
   %body
     #main
       #header.basic
@@ -48,71 +47,3 @@
                   Login
       .site
         = yield
-      .push
-    #footer
-      .site
-        .info
-          .links
-            %a{ :href => "/blog" }
-              %b
-                Blog
-            |
-            %a{ :href => "http://support.github.com/" }
-              Support
-            |
-            %a{ :href => "/training" }
-              Training
-            |
-            %a{ :href => "/contact" }
-              Contact
-            |
-            %a{ :href => "http://develop.github.com/" }
-              API
-            |
-            %a{ :href => "http://twitter.com/github" }
-              Status
-            |
-            %a{ :href => "http://twitter.com/github" }
-              GitHub on Twitter
-            |
-            %a{ :href => "/guides/home" }
-              Help
-          .company
-            %span#_rrt{ :title => "0.01026s from fe1.rs.github.com" }
-              GitHub
-            ™
-            is
-            %a{ :href => "http://logicalawesome.com/" }
-              Logical Awesome
-            ©2009 |
-            %a{ :href => "/site/terms" }
-              Terms of Service
-            |
-            %a{ :href => "/site/privacy" }
-              Privacy Policy
-        .sponsor
-          %div
-            Powered by the
-            %a{ :href => "http://www.rackspace.com/" }
-              Dedicated
-              Servers
-            and
-            %br
-            %a{ :href => "http://www.rackspacecloud.com/" }
-              Cloud
-              Computing
-            of Rackspace Hosting
-            %span
-              ®
-          %a{ :href => "http://www.rackspace.com/" }
-            %img{ :src => "/images/rackspace_logo.png", :alt => "Dedicated Server" }
-    #coming_soon{ :style => "display: none;" }
-      This feature is coming soon.  Sit tight!
-    %script{ :type => "text/javascript" }
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    %script{ :type => "text/javascript", :src => "/javascripts/ga.js" }
-    %script{ :type => "text/javascript" }
-      var pageTracker = _gat._getTracker("UA-3769691-2");
-      pageTracker._initData();
-      pageTracker._trackPageview();

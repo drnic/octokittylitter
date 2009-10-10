@@ -1,7 +1,19 @@
 class UserSessionsController < ApplicationController
   layout "public"
-  resource_controller
+
+  def create
+    @user_session = UserSession.new(:login => params[:login], :password => params[:password])
+    if @user_session.save
+      redirect_to(inbox_index_path)
+    else
+      flash[:notice] = 'Incorrect login or password.'
+      render :action => "new"
+    end
+  end
   
-  create.success.wants { redirect_to(inbox_index_path) }
-  create.failure.flash 'Incorrect login or password.'
+  def destroy
+    @user_session = UserSession.find
+    @user_session.destroy
+    redirect_to root_url
+  end
 end
