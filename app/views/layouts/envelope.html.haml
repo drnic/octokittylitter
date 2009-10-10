@@ -1,0 +1,86 @@
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
+    %title
+      Message
+    %link{ :href => "/stylesheets/bundle.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %script{ :src => "/javascripts/jquery.js", :type => "text/javascript" }
+    %script{ :type => "text/javascript", :src => "/javascripts/bundle.js" }
+    %script{ :type => "text/javascript" }
+      github_user = 'drnic'
+    = javascript_include_tag :all
+    = yield(:head)
+  %body
+    #main
+      #header.basic
+        .site
+          .logo
+            %a{ :href => "https://github.com/" }
+              %img{ :src => "/images/logov3.png", :alt => "github" }
+          .userbox
+            .inner
+              .avatarname
+                %a{ :href => "http://github.com/drnic" }
+                  %img{ :src => "message_files/cb2b768a5e546b24052ea03334e43676_002.jpg", :height => "20", :alt => "", :width => "20" }
+                %a.name{ :href => "http://github.com/drnic" }
+                  drnic
+              %ul.usernav
+                %li
+                  %a{ :href => "https://github.com/" }
+                    Dashboard
+                %li
+                  %a{ :href => "http://github.com/inbox" }
+                    Inbox
+                  %a.unread_count.new_messages{ :href => "http://github.com/inbox" }
+                    123
+                %li
+                  %a{ :href => "https://github.com/account" }
+                    Account Settings
+                %li
+                  %a{ :href => "http://github.com/logout" }
+                    Log Out
+          /
+            \/.userbox
+          .topsearch
+            %form#top_search_form{ :action => "/search", :method => "get" }
+              %a.advanced-search{ :href => "http://github.com/search", :title => "Advanced Search" }
+                Advanced Search
+              %input.search.repo_autocompleter.notnative.placeholder.ac_input{ :results => "5", :name => "q", :placeholder => "Search GitHub\342\200\246", :autocomplete => "off", :type => "search" }
+              <input value="Search" ,="" class="button" type="submit">
+              %input{ :name => "type", :type => "hidden", :value => "Everything" }
+              %input{ :name => "repo", :type => "hidden", :value => "" }
+              %input{ :name => "langOverride", :type => "hidden", :value => "" }
+              %input{ :name => "start_value", :type => "hidden", :value => "1" }
+            %ul.nav
+              %li
+                %a{ :href => "http://github.com/repositories" }
+                  Explore GitHub
+              %li
+                %a{ :href => "http://gist.github.com/" }
+                  Gist
+              %li
+                %a{ :href => "http://github.com/blog" }
+                  Blog
+              %li
+                %a{ :href => "http://help.github.com/" }
+                  Help
+      .site
+        #message
+          .actions
+            .compose
+              %p
+                %a{ :href => "http://github.com/inbox/new" }
+                  %img{ :src => "/images/message.png", :alt => "compose" }
+                  %span
+                    Compose Message
+            .boxes
+              %ul
+                %li
+                  %a.new{ :href => "/inbox" }= "Inbox (#{Message.unread.count})"
+                %li
+                  %a{ :href => "http://github.com/inbox/sent" }
+                    Sent Messages
+          .envelope
+            = yield

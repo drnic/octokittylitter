@@ -1,0 +1,36 @@
+.envelope
+%h1
+  = @message.subject
+.hidden_message{ :style => "" }
+  .header
+    .gravatar
+      %img{ :src => "/images/blank_gravatar.png", :height => "30", :alt => "", :width => "30" }
+    .info
+      .del
+        %a{ :href => "#" }
+          %img{ :src => "/images/delete.png", :alt => "delete" }
+      .title
+        %a{ :href => "http://github.com/#{@message.from_github_login}" }
+          = @message.from_github_login
+        said
+        = time_ago_in_words @message.sent_at
+        ago:
+  .body.wikistyle
+    %p
+      = @message.message
+.reply
+  %form#reply{ :action => "/inbox/create_reply", :method => "post" }
+    %label{ :for => "reply_body" }
+      Reply:
+    %textarea#reply_body{ :name => "body" }
+    %input{ :name => "message_id", :type => "hidden", :value => "265609" }
+    .controls
+      .submits
+        %input{ :type => "submit", :value => "Send" }
+        %a.cancel{ :href => "#" }
+          Back to Inbox
+        %span.status{ :style => "display: none;" }
+      .formatting
+        Parsed with
+        %a{ :href => "http://github.github.com/github-flavored-markdown/", :target => "_blank" }
+          GitHub Flavored Markdown

@@ -2,247 +2,84 @@
   You are using named yields. Here are examples how to use them:
 - content_for :head do
   %script
-- content_for :inbox_link do
-  Inbox (123)
 /
   original body content
-%div{ :style => "float: right;" }
-  .pagination
-    %span.disabled
-      « Previous
-    %a{ :hotkey => "l", :href => "http://github.com/inbox?page=2" }
-      Next »
 %h1
-  Inbox
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/269383" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/fnando" }
-        fnando
-      sent you a
-      %span
-        message
-      1 day ago
-    .details
-      .gravatar
-        %img{ :src => "/images/cb5d9e9095cd41b636764a85e57ade4b.jpg", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/269383#reply" }
-            Foreground color is ignored [drnic/copy-as-rtf-tmbundle GH-1]
-        %p
-          %a.body{ :href => "http://github.com/inbox/269383#reply" }
-            The foreground color is being ignored when using the Blackboard theme, so the text is c...
-.item.message
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/265640" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/nex3" }
-        nex3
-      sent you a
-      %span
-        message
-      4 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/39b3031f890ad7ce40661614af8b52a6.jpg", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/265609#reply" }
-        %p
-          %a.body{ :href => "http://github.com/inbox/265609#reply" }
-            Sorry, I sent a message to Jack about the comments, but I forgot to cc you. The comment...
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/264484" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/timriley" }
-        timriley
-      sent you a
-      %span
-        message
-      5 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/ef3623d04d4727965ca295a6689b4d2f.jpg", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/264484#reply" }
-            Re: Question: does my rails app have to run on jruby? [timriley/saucerly GH-1]
-        %p
-          %a.body{ :href => "http://github.com/inbox/264484#reply" }
-            Hey Dr Nic,
-            
-            You're assumption is correct. At the moment your entire app will need to...
-.item.message
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/255142" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/szimek" }
-        szimek
-      sent you a
-      %span
-        message
-      13 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/2b2b07fe8688479d2559704d4bf8a264.png", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/253560#reply" }
-        %p
-          %a.body{ :href => "http://github.com/inbox/253560#reply" }
-            Hi, glad to hear that it still works and someone found it useful :)
-            
-            I've just regist...
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/254178" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/ilarra" }
-        ilarra
-      sent you a
-      %span
-        message
-      14 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/d3b6ccb151050437606d29f4d82466a6.png", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/254178#reply" }
-            Re: only takes the first drop down [drnic/ninja-search-js GH-1]
-        %p
-          %a.body{ :href => "http://github.com/inbox/254178#reply" }
-            I just noticed it ... it used to work fine around a month ago. maybe related to a firef...
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/254155" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/ilarra" }
-        ilarra
-      sent you a
-      %span
-        message
-      14 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/d3b6ccb151050437606d29f4d82466a6.png", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/254155#reply" }
-            only takes the first drop down [drnic/ninja-search-js GH-1]
-        %p
-          %a.body{ :href => "http://github.com/inbox/254155#reply" }
-            the current script is unable to "convert" the second and following drop downs...
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/253586" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/j2fly" }
-        j2fly
-      sent you a
-      %span
-        message
-      15 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/06535ead5d36ccd9f349818fe20e31be.png", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/253586#reply" }
-            If you're on leopard and are trying to install this and you have CS4 installed... [drnic/ruby-on-rails-tmbundle GH-2]
-        %p
-          %a.body{ :href => "http://github.com/inbox/253586#reply" }
-            arch -i386 osascript -e 'tell app "TextMate" to reload bundles'
-            
-            instead of...
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/252569" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/github" }
-        github
-      sent you a
-      %span
-        message
-      15 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/f63f20f3843f43fae28d77233e5db5d4.jpg", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/252569#reply" }
-            [ruby-efax] Gem Build Successful
-        %p
-          %a.body{ :href => "http://github.com/inbox/252569#reply" }
-            Your gem has been built, it will be added to gems.github.com soon.
-.item.message
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/251508" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/kamk" }
-        kamk
-      sent you a
-      %span
-        message
-      16 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/534fdb075ba07da15a3f44fd6ca41ac6.jpg", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/251508#reply" }
-            Migrate to Previous Version [drnic/ruby-on-rails-tmbundle GH-1]
-        %p
-          %a.body{ :href => "http://github.com/inbox/251508#reply" }
-            This little patch makes "Migrate to Previous Version" compatible with timesta...
-.item.message.unread
-  .body
-    .del
-      %a{ :href => "#", :title => "delete thread", :rel => "/inbox/252236" }
-        %img{ :src => "/images/delete.png", :alt => "delete" }
-    .title
-      %a{ :href => "http://github.com/viatropos" }
-        viatropos
-      sent you a
-      %span
-        message
-      16 days ago
-    .details
-      .gravatar
-        %img{ :src => "/images/a2beb162438985ede0a49b240aa17ca1.jpg", :height => "30", :alt => "", :width => "30" }
-      .message
-        %p
-          %a.subject{ :href => "http://github.com/inbox/250636#reply" }
-        %p
-          %a.body{ :href => "http://github.com/inbox/250636#reply" }
-            Thanks a lot, that's what I needed to know :)
-            
-            Best,
-            Lance
-%div{ :style => "float: right;" }
-  .pagination
-    %span.disabled
-      « Previous
-    %a{ :hotkey => "l", :href => "http://github.com/inbox?page=2" }
-      Next »
+  comments on our commit
+.hidden_message{ :style => "" }
+  .header
+    .gravatar
+      %img{ :src => "/images/cb2b768a5e546b24052ea03334e43676.jpg", :height => "30", :alt => "", :width => "30" }
+    .info
+      .del
+        %a{ :href => "#" }
+          %img{ :src => "/images/delete.png", :alt => "delete" }
+      .title
+        %a{ :href => "http://github.com/drnic" }
+          drnic
+        said
+        4 days ago:
+  .body.wikistyle
+    %p
+      Hey Nathan,
+    %p
+      I only just noticed all your comments (
+      %a{ :href => "http://github.com/drnic/haml/commit/4e9dfdc1a5e07bf852de7828b0244dde098a2bd6#test/haml/html2haml_test" }
+        http://github.com/drnic/haml/commit/4e9dfdc1a5e07bf852de7828b0244dde098a2bd6#test/haml/html2haml_test
+      \.rb-P244) when I was about to ping you asking "when will the commits be released?"
+    %p
+      In answer to some of the questions, the tests ended like this
+      because it was awful awful work trying to get html2haml to work. Having
+      1 large example case ensured that we covered all cases. There might be
+      a redundant second test from the times we were originally trying to
+      break down the tests into "test this bit".
+    %p
+      Are any of these comments reason to not accept the patch/commits and push them out?
+    %p
+      I ask because I don't want to release install_theme with haml's
+      current dodgy html2haml support (I've already set haml 2.3.0 in its gem
+      spec.
+    %p
+      Cheers
+      %br
+      Nic
+.hidden_message{ :style => "" }
+  .header
+    .gravatar
+      %img{ :src => "/images/39b3031f890ad7ce40661614af8b52a6.jpg", :height => "30", :alt => "", :width => "30" }
+    .info
+      .title
+        %a{ :href => "http://github.com/nex3" }
+          nex3
+        said
+        4 days ago:
+  .body.wikistyle
+    %p
+      Sorry,
+      I sent a message to Jack about the comments, but I forgot to cc you.
+      The comments are things I'd like resolved before merging, if possible.
+      If that's too much of a pain, I can do some of them myself.
+    %p
+      As for releasing, I was planning on releasing this as part of Haml
+      2.4.0, which is going out at some unspecified point in the future.
+      There is a haml-edge gem that's released automatically every time I
+      push to master with version 3.3.X that you could depend on in the
+      interim. I'd rather not put these changes in stable, though, since
+      stable is supposed to only have minor bugfixes, not major changes to
+      functionality.
+.reply
+  %form#reply{ :action => "/inbox/create_reply", :method => "post" }
+    %label{ :for => "reply_body" }
+      Reply:
+    %textarea#reply_body{ :name => "body" }
+    %input{ :name => "message_id", :type => "hidden", :value => "265609" }
+    .controls
+      .submits
+        %input{ :type => "submit", :value => "Send" }
+        %a.cancel{ :href => "#" }
+          Back to Inbox
+        %span.status{ :style => "display: none;" }
+      .formatting
+        Parsed with
+        %a{ :href => "http://github.github.com/github-flavored-markdown/", :target => "_blank" }
+          GitHub Flavored Markdown

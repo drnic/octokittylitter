@@ -4,6 +4,8 @@ class InboxController < ApplicationController
   end
 
   def show
+    @message = Message.find_by_github_message_number(params[:id])
+    render :action => :show, :layout => "envelope"
   end
 
   def new
