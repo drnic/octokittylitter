@@ -72,7 +72,20 @@
       .site
         #inbox
           .actions
-            = yield(:actions) || render_or_default('actions')
+            .compose
+              %p
+                %a{ :href => "http://github.com/inbox/new" }
+                  %img{ :src => "/images/message.png", :alt => "compose" }
+                  %span
+                    Compose Message
+            .boxes
+              %ul
+                %li
+                  %a.new{ :href => "http://github.com/inbox" }
+                    = yield(:inbox_link) || render_or_default('inbox_link')
+                %li
+                  %a{ :href => "http://github.com/inbox/sent" }
+                    Sent Messages
           .list
             = yield
       .push
