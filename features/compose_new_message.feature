@@ -4,8 +4,8 @@ Feature: Compose new message
   I want to be send a message to another user
 
   Scenario: Compose new message
-    When I am on the inbox page
-    And I follow "Compose "
+    Given I am logged in as "drnic"
+    When I follow "Compose "
     And I fill in "To:" with "defunkt"
     And I fill in "Subject:" with "Sending a message"
     And I fill in "message_body" with "This is the body of the message"

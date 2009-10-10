@@ -4,7 +4,8 @@ Feature: Setup inbox
   I want to be able to explicitly determine what messages are in the inbox
 
   Scenario: Setup messages
-    Given I add the following messages to "inbox" mailbox:
+    Given I am logged in as "drnic"
+    And I add the following messages to "inbox" mailbox:
       | Github message number | From github login | Sent time ago | Subject             | Body                 | Unread |
       | 269383                | dhh               | 12 hours ago  | Rails 3.0 released! | Go get it            | true   |
       | 269380                | defunkt           | 25 hours ago  | No more rubygems    | Long live Rubyforge. | false  |
