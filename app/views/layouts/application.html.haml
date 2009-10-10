@@ -24,9 +24,9 @@
             .inner
               .avatarname
                 %a{ :href => "/" }
-                  %img{ :src => "/images/cb2b768a5e546b24052ea03334e43676.jpg", :height => "20", :alt => "", :width => "20" }
+                  %img{ :src => "/images/blank_gravatar.png", :height => "20", :alt => "", :width => "20" }
                 %a.name{ :href => "/" }
-                  drnic
+                  = current_user.login
               %ul.usernav
                 %li
                   %a{ :href => "/" }
