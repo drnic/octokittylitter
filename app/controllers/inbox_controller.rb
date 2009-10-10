@@ -37,7 +37,7 @@ class InboxController < ApplicationController
       :unread                => false,
       :github_message_number => reply_number + 1)
     flash[:notice] = "Your message has been sent."
-    redirect_to(inbox_index_path)
+    redirect_to(inbox_path(@message, :anchor => "reply"))
   end
 
 end

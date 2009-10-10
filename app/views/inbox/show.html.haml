@@ -9,7 +9,7 @@
       .del
         %a{ :href => "#" }
           %img{ :src => "/images/delete.png", :alt => "delete" }
-      .title
+      .title{ :class => @message.unread? ? "unread" : ""}
         %a{ :href => "http://github.com/#{@message.from_github_login}" }
           = @message.from_github_login
         said
@@ -18,6 +18,9 @@
   .body.wikistyle
     %p
       = @message.body
+- if flash[:notice]
+  .notification
+    = flash[:notice]
 .reply
   %form#reply{ :action => "/inbox/create_reply", :method => "post" }
     %label{ :for => "reply_body" }
