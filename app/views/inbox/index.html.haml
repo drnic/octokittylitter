@@ -1,6 +1,6 @@
 %h1 Inbox
 - for message in @messages
-  .item.message.unread
+  .item.message{ :class => (message.unread? ? "unread" : "") }
     .body
       .del
         %a{ :href => "#", :title => "delete thread", :rel => "/inbox/#{message.github_message_number}" }
