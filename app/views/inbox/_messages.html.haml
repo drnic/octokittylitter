@@ -1,0 +1,19 @@
+- for message in @messages
+  .item.message{ :class => (message.unread? ? "unread" : "") }
+    .body
+      .del
+        %a{ :href => "#", :title => "delete thread", :rel => "/inbox/#{message.github_message_number}" }
+          %img{ :src => "/images/delete.png", :alt => "delete" }
+      .title
+        != render :partial => "#{message.mailbox}_status", :locals => { :message => message }
+        = time_ago_in_words message.sent_at
+        ago
+      .details
+        .gravatar
+          %img{ :src => "/images/blank_gravatar.png", :height => "30", :alt => "", :width => "30" }
+        .message
+          %p
+            %a.subject{ :href => "http://github.com/inbox/#{message.github_message_number}#reply" }
+          %p
+            %a.body{ :href => "http://github.com/inbox/#{message.github_message_number}#reply" }
+              = message.message

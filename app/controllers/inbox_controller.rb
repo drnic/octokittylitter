@@ -1,6 +1,6 @@
 class InboxController < ApplicationController
   def index
-    @messages = Message.all(:order => "sent_at DESC")
+    @messages = Message.inbox
   end
 
   def show
@@ -16,6 +16,7 @@ class InboxController < ApplicationController
   end
 
   def sent
+    @messages = Message.sent_mailbox
   end
 
 end

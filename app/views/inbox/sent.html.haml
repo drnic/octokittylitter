@@ -1,0 +1,8 @@
+%h1 Sent Messages
+!= render :partial => 'messages'
+%div{ :style => "float: right;" }
+  .pagination
+    %span.disabled
+      « Previous
+    %a{ :hotkey => "l", :href => "http://github.com/inbox?page=2" }
+      Next »

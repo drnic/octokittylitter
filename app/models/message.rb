@@ -2,8 +2,10 @@ class Message < ActiveRecord::Base
   attr_accessor :sent_time_ago
   
   named_scope :unread, :conditions => { :unread => true }
+  named_scope :inbox, :conditions => {:mailbox => "inbox"}, :order => "sent_at DESC"
+  named_scope :sent_mailbox, :conditions => {:mailbox => "sent"}, :order => "sent_at DESC"
   
-  
+  validates_presence_of :mailbox
   validates_presence_of :from_github_login
   validates_presence_of :message
   validates_presence_of :github_message_number

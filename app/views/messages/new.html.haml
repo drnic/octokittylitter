@@ -1,6 +1,7 @@
 %h1 New message
 
 - semantic_form_for @message do |f|
+  = f.input :mailbox, :as => :select, :collection => %w[inbox sent]
   = f.inputs :from_github_login, :unread, :sent_time_ago, :message, :github_message_number
   = f.buttons
 
