@@ -12,7 +12,9 @@ Rails::Initializer.run do |config|
   config.gem 'pluginaweek-state_machine', :lib => 'state_machine', :source => 'http://gems.github.com', :version => '>= 0.8.0'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com', :version => '>= 2.3.8'
   config.gem 'giraffesoft-resource_controller', :lib => 'resource_controller', :source => 'http://gems.github.com', :version => '>= 0.6.5'
-
+  config.gem 'notahat-machinist', :lib => 'machinist', :source => 'http://gems.github.com', :version => '>= 1.0.3'
+  config.gem 'faker', :version => '>= 0.3.1'
+  
   config.time_zone = 'UTC'
 
   # fake github never sends email
