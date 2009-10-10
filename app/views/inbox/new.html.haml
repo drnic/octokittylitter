@@ -1,0 +1,26 @@
+.write
+  %h1
+    Compose Message
+  %form#new_message.new_message{ :action => "/inbox", :method => "post" }
+    .buttons.buttons-top
+      %input#message_submit.send{ :name => "commit", :type => "submit", :value => "Send" }
+      %a.cancel{ :href => "#" }
+        Cancel
+    .field
+      %label{ :for => "message_to" }
+        To:
+      %input#message_to.autocompleter.ac_input{ :name => "message[to]", :autocomplete => "off", :size => "30", :type => "text" }
+    .field
+      %label{ :for => "message_subject" }
+        Subject:
+      %input#message_subject{ :name => "message[subject]", :size => "30", :type => "text" }
+    %textarea#message_body{ :name => "message[body]", :rows => "20", :cols => "40" }
+    .submits
+      .buttons.buttons-bottom
+        %input#message_submit.send{ :name => "commit", :type => "submit", :value => "Send" }
+        %a.cancel{ :href => "#" }
+          Cancel
+      .formatting
+        Parsed with
+        %a{ :href => "http://github.github.com/github-flavored-markdown/", :target => "_blank" }
+          GitHub Flavored Markdown

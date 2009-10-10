@@ -9,12 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091010085924) do
+ActiveRecord::Schema.define(:version => 20091010113731) do
 
   create_table "messages", :force => true do |t|
     t.string   "from_github_login"
     t.datetime "sent_at"
-    t.text     "message"
+    t.text     "body"
     t.string   "github_message_number"
     t.datetime "created_at"
     t.datetime "updated_at"

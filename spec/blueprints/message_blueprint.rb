@@ -3,7 +3,7 @@ Message.blueprint do
   github_message_number { Faker.numerify '######' }
   mailbox { %w[inbox sent].rand }
   subject
-  message
+  body
   sent_time_ago { "#{[*1..10].rand} #{%w[minutes hours days].rand} ago" }
   unread { [true, true, false].rand }
 end

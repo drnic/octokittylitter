@@ -1,8 +1,9 @@
-%div{ :style => "float: right;" }
-  = will_paginate @messages
+.list
+  %div{ :style => "float: right;" }
+    = will_paginate @messages
 
-%h1 Sent Messages
-!= render :partial => 'messages'
+  %h1 Sent Messages
+  != render :partial => 'messages'
 
-%div{ :style => "float: right;" }
-  = will_paginate @messages
+  %div{ :style => "float: right;" }
+    = will_paginate @messages

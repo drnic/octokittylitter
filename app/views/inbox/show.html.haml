@@ -17,7 +17,7 @@
         ago:
   .body.wikistyle
     %p
-      = @message.message
+      = @message.body
 .reply
   %form#reply{ :action => "/inbox/create_reply", :method => "post" }
     %label{ :for => "reply_body" }

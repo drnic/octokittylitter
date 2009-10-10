@@ -12,13 +12,14 @@ class InboxController < ApplicationController
   end
 
   def create
+    p params
   end
 
   def create_reply
     reply_number = params[:message_id].to_i
     @original_message = Message.find_by_github_message_number(reply_number)
     @message = Message.create(
-      :message               => params[:body], 
+      :body                  => params[:body], 
       :from_github_login     => @original_message.from_github_login,
       :subject               => @original_message.subject,
       :mailbox               => "sent",

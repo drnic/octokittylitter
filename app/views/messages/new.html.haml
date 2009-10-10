@@ -2,7 +2,7 @@
 
 - semantic_form_for @message do |f|
   = f.input :mailbox, :as => :select, :collection => %w[inbox sent]
-  = f.inputs :from_github_login, :unread, :sent_time_ago, :subject, :message, :github_message_number
+  = f.inputs :from_github_login, :unread, :sent_time_ago, :subject, :body, :github_message_number
   = f.buttons
 
 = link_to 'Back', messages_path
