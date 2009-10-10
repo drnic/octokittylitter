@@ -1,0 +1,146 @@
+!!!
+%html{ :contentxpath => "//div[contains(@class, &quot;news&quot;)]/div[contains(@class, &quot;alert&quot;)]", :enablejs => "true", :fixoverflow => "false", :autopagersettingowner => "ku", "xml:lang" => "en", :lang => "en", :linkxpath => "//a[@hotkey=&quot;l&quot;]", :autopagerversion => "0.5.3.5", :autopagerajax => "false", :autopagerneedmouseevent => "false", :xmlns => "http://www.w3.org/1999/xhtml", :containerxpath => "" }
+  %head
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
+    %title
+      Your Inbox - GitHub
+    %link{ :href => "http://github.com/opensearch.xml", :title => "GitHub", :rel => "search", :type => "application/opensearchdescription+xml" }
+    %link{ :href => "http://github.com/fluidicon.png", :title => "GitHub", :rel => "fluid-icon" }
+    %link{ :href => "/stylesheets/bundle.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %script{ :src => "/javascripts/jquery.js", :type => "text/javascript" }
+    %script{ :type => "text/javascript", :src => "/javascripts/bundle.js" }
+    %script{ :type => "text/javascript" }
+      github_user = 'drnic'
+    = javascript_include_tag :all
+    = yield(:head)
+  #_firebugConsole{ :FirebugVersion => "1.4.3b1", :style => "display: none;" }
+  %body
+    #main
+      #header.basic
+        .site
+          .logo
+            %a{ :href => "https://github.com/" }
+              %img{ :src => "/images/logov3.png", :alt => "github" }
+          .userbox
+            .inner
+              .avatarname
+                %a{ :href => "http://github.com/drnic" }
+                  %img{ :src => "/images/cb2b768a5e546b24052ea03334e43676.jpg", :height => "20", :alt => "", :width => "20" }
+                %a.name{ :href => "http://github.com/drnic" }
+                  drnic
+              %ul.usernav
+                %li
+                  %a{ :href => "https://github.com/" }
+                    Dashboard
+                %li
+                  %a{ :href => "http://github.com/inbox" }
+                    Inbox
+                  %a.unread_count.new_messages{ :href => "http://github.com/inbox" }
+                    123
+                %li
+                  %a{ :href => "https://github.com/account" }
+                    Account Settings
+                %li
+                  %a{ :href => "http://github.com/logout" }
+                    Log Out
+          /
+            \/.userbox
+          .topsearch
+            %form#top_search_form{ :action => "/search", :method => "get" }
+              %a.advanced-search{ :href => "http://github.com/search", :title => "Advanced Search" }
+                Advanced Search
+              %input.search.repo_autocompleter.notnative.placeholder.ac_input{ :results => "5", :name => "q", :placeholder => "Search GitHub\342\200\246", :autocomplete => "off", :type => "search" }
+              <input value="Search" ,="" class="button" type="submit">
+              %input{ :name => "type", :type => "hidden", :value => "Everything" }
+              %input{ :name => "repo", :type => "hidden", :value => "" }
+              %input{ :name => "langOverride", :type => "hidden", :value => "" }
+              %input{ :name => "start_value", :type => "hidden", :value => "1" }
+            %ul.nav
+              %li
+                %a{ :href => "http://github.com/repositories" }
+                  Explore GitHub
+              %li
+                %a{ :href => "http://gist.github.com/" }
+                  Gist
+              %li
+                %a{ :href => "http://github.com/blog" }
+                  Blog
+              %li
+                %a{ :href => "http://help.github.com/" }
+                  Help
+      .site
+        #inbox
+          .actions
+            = yield(:actions) || render_or_default('actions')
+          .list
+            = yield
+      .push
+    #footer
+      .site
+        .info
+          .links
+            %a{ :href => "http://github.com/blog" }
+              %b
+                Blog
+            |
+            %a{ :href => "http://support.github.com/" }
+              Support
+            |
+            %a{ :href => "http://github.com/training" }
+              Training
+            |
+            %a{ :href => "http://github.com/contact" }
+              Contact
+            |
+            %a{ :href => "http://develop.github.com/" }
+              API
+            |
+            %a{ :href => "http://twitter.com/github" }
+              Status
+            |
+            %a{ :href => "http://twitter.com/github" }
+              GitHub on Twitter
+            |
+            %a{ :href => "http://github.com/guides/home" }
+              Help
+          .company
+            %span#_rrt{ :title => "0.43367s from fe2.rs.github.com" }
+              GitHub
+            ™
+            is
+            %a{ :href => "http://logicalawesome.com/" }
+              Logical Awesome
+            ©2009 |
+            %a{ :href => "http://github.com/site/terms" }
+              Terms of Service
+            |
+            %a{ :href => "http://github.com/site/privacy" }
+              Privacy Policy
+        .sponsor
+          %div
+            Powered by the
+            %a{ :href => "http://www.rackspace.com/" }
+              Dedicated
+              Servers
+            and
+            %br
+            %a{ :href => "http://www.rackspacecloud.com/" }
+              Cloud
+              Computing
+            of Rackspace Hosting
+            %span
+              ®
+          %a{ :href => "http://www.rackspace.com/" }
+            %img{ :src => "/images/rackspace_logo.png", :alt => "Dedicated Server" }
+    #coming_soon{ :style => "display: none;" }
+      This feature is coming soon.  Sit tight!
+    %script{ :type => "text/javascript" }
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    %script{ :type => "text/javascript", :src => "/javascripts/ga.js" }
+    %script{ :type => "text/javascript" }
+      var pageTracker = _gat._getTracker("UA-3769691-2");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+    #autoPagerLastDiv.autoPagerS{ :style => "border: 0px none ; margin: 0px; padding: 0px; position: absolute; width: 0px; display: block; z-index: -90; left: -100px; top: -100px; height: 0px;" }
