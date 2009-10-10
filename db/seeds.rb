@@ -6,4 +6,4 @@ def regenerate_seeds(klass, count)
   puts "Generated #{count} #{klass.name.underscore.humanize.pluralize.downcase}."
 end
 
-regenerate_seeds(Message, 25)
+regenerate_seeds(Message, 100)
