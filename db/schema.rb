@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091010022636) do
+ActiveRecord::Schema.define(:version => 20091010032406) do
+
+  create_table "messages", :force => true do |t|
+    t.string   "from_github_login"
+    t.datetime "sent_at"
+    t.text     "message"
+    t.string   "github_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

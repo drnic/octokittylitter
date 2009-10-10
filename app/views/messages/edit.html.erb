@@ -1,0 +1,28 @@
+<h1>Editing message</h1>
+
+<% form_for(@message) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :from_github_login %><br />
+    <%= f.text_field :from_github_login %>
+  </p>
+  <p>
+    <%= f.label :sent_at %><br />
+    <%= f.datetime_select :sent_at %>
+  </p>
+  <p>
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </p>
+  <p>
+    <%= f.label :github_id %><br />
+    <%= f.text_field :github_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @message %> |
+<%= link_to 'Back', messages_path %>
