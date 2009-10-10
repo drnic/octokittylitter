@@ -1,0 +1,5 @@
+giraffesoft-resource_controller --version '>= 0.6.5' --source 'http://gems.github.com'
+mislav-will_paginate --version '>= 2.3.8' --source 'http://gems.github.com'
+pluginaweek-state_machine --version '>= 0.8.0' --source 'http://gems.github.com'
+justinfrench-formtastic --version '>= 0.2.3' --source 'http://gems.github.com'
+haml --version '>= 2.0.0' 

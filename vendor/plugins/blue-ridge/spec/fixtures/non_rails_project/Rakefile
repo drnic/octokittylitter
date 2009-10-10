@@ -1,0 +1,4 @@
+ENV["APP_ROOT"] = File.dirname(__FILE__)
+import File.dirname(__FILE__) + '/vendor/plugins/blue-ridge/tasks/javascript_testing_tasks.rake'
+
+task :default => "test:javascripts"
