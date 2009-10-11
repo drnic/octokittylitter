@@ -41,4 +41,9 @@ class InboxController < ApplicationController
     redirect_to(inbox_path(reply_to, :anchor => "reply"))
   end
 
+  def seed
+    100.times {|n| Message.make(:from => current_user.login)}
+    70.times {|n| Message.make(:to => current_user.login)}
+    redirect_to(inbox_index_path)
+  end
 end
