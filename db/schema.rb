@@ -9,12 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091011001152) do
+ActiveRecord::Schema.define(:version => 20091011011743) do
 
   create_table "conversations", :force => true do |t|
     t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "subject"
   end
 
   create_table "messages", :force => true do |t|
@@ -25,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20091011001152) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "unread",                :default => true
-    t.string   "subject"
     t.string   "from"
     t.integer  "conversation_id"
   end

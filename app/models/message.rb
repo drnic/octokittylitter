@@ -1,13 +1,18 @@
 class Message < ActiveRecord::Base
-  attr_accessor :reply_to
-  attr_accessor :sent_time_ago
+  attr_accessor :reply_to, :sent_time_ago, :subject
   
   belongs_to :conversation
   
-  named_scope :unread, :conditions => { :unread => true }
-  named_scope :inbox, :conditions => {:mailbox => "inbox"}, :order => "sent_at DESC"
-  named_scope :sent_mailbox, :conditions => {:mailbox => "sent"}, :order => "sent_at DESC"
+  delegate :number, :to => :conversation
   
+  named_scope :unread, :conditions => { :unread => true }
+  named_scope :inbox_for, lambda { |login| 
+    { :conditions => { :to => login }, :order => "sent_at DESC" }
+  }
+  named_scope :sent_from, lambda { |login| 
+    { :conditions => { :from => login }, :order => "sent_at DESC" }
+  }
+
   validates_presence_of :to, :from
   validates_presence_of :subject, :unless => :reply_to
   validates_presence_of :body
@@ -37,7 +42,7 @@ class Message < ActiveRecord::Base
       end
       self.conversation = reply_to
     else
-      self.conversation = Conversation.create
+      self.conversation = Conversation.create(:subject => subject)
     end
   end
   

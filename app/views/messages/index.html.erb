@@ -8,9 +8,9 @@
     <th>Github</th>
   </tr>
 
-<% @messages.each do |message| %>
+<% @conversations.each do |message| %>
   <tr>
-    <td><%=h message.from_github_login %></td>
+    <td><%=h message.from %></td>
     <td><%=h message.sent_at %></td>
     <td><%=h message.body %></td>
     <td><%=h message.github_id %></td>

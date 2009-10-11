@@ -1,14 +1,16 @@
 class InboxController < ApplicationController
   def index
-    @messages = Message.inbox.paginate :page => params[:page], :per_page => 10
+    @mailbox = "inbox"
+    @messages = Message.inbox_for(current_user.login).paginate :page => params[:page], :per_page => 10
   end
 
   def sent
-    @messages = Message.sent_mailbox.paginate :page => params[:page], :per_page => 10
+    @mailbox = "sent"
+    @messages = Message.sent_from(current_user.login).paginate :page => params[:page], :per_page => 10
   end
 
   def show
-    @message = Message.find_by_github_message_number(params[:id])
+    @message = Conversation.find(params[:id])
     render :action => :show, :layout => "envelope"
   end
 
@@ -16,8 +18,7 @@ class InboxController < ApplicationController
   end
 
   def create
-    params[:message][:from_github_login] = params[:message].delete(:to)
-    @message = Message.new(params[:message].merge(:mailbox => "sent"))
+    @message = Message.new(params[:message].merge(:from => current_user.login, :unread => false))
     if @message.save
       flash[:notice] = "Your message has been sent."
       redirect_to(inbox_index_path)
@@ -27,17 +28,15 @@ class InboxController < ApplicationController
   end
 
   def create_reply
-    reply_number = params[:message_id].to_i
-    @original_message = Message.find_by_github_message_number(reply_number)
+    reply_to = Conversation.find(params[:message_id])
     @message = Message.create(
-      :body                  => params[:body], 
-      :from_github_login     => @original_message.from_github_login,
-      :subject               => @original_message.subject,
-      :mailbox               => "sent",
-      :unread                => false,
-      :github_message_number => reply_number + 1)
+      :reply_to => reply_to,
+      :body     => params[:body], 
+      :to       => reply_to.other_user(current_user.login),
+      :from     => current_user.login,
+      :unread   => false)
     flash[:notice] = "Your message has been sent."
-    redirect_to(inbox_path(@message, :anchor => "reply"))
+    redirect_to(inbox_path(reply_to, :anchor => "reply"))
   end
 
 end

@@ -10,7 +10,7 @@ describe "Messages" do
     before do
       @message = Message.create(:from => "drnic", :to => "defunkt", :subject => "subject", :body => "body")
     end
-    subject { Message.create(:from => "defunkt", :to => "drnic", :reply_to => @message, :body => "response")}
+    subject { Message.create(:from => "defunkt", :to => "drnic", :reply_to => @message.conversation, :body => "response")}
     it { should be_valid }
     it { subject.conversation.messages.should == [@message, subject] }
   end
