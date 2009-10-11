@@ -35,7 +35,7 @@
                   %a{ :href => "/inbox" }
                     Inbox
                   %a.unread_count.new_messages{ :href => "/inbox" }
-                    = Message.unread.count
+                    = Message.unread.inbox_for(current_user.login).count
                 %li
                   %a{ :href => "/" }
                     Account Settings
@@ -54,7 +54,7 @@
             .boxes
               %ul
                 %li
-                  %a.new{ :href => "/inbox" }= "Inbox (#{Message.unread.count})"
+                  %a.new{ :href => "/inbox" }= "Inbox (#{Message.unread.inbox_for(current_user.login).count})"
                 %li
                   %a{ :href => "/inbox/sent" }
                     Sent Messages
