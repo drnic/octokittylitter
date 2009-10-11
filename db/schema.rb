@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091011014316) do
+ActiveRecord::Schema.define(:version => 20091011032127) do
 
   create_table "conversations", :force => true do |t|
     t.integer  "number"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20091011014316) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end

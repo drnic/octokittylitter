@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
         end
 
         store_location
-        redirect_to new_user_session_url
+        redirect_to login_path
         return false
       end
     end
