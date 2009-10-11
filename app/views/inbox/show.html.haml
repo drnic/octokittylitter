@@ -11,7 +11,7 @@
           %a{ :href => "#" }
             %img{ :src => "/images/delete.png", :alt => "delete" }
         .title{ :class => message.unread? ? "unread" : ""}
-          %a{ :href => "http://github.com/#{message.from}" }
+          %a{ :href => "/#{message.from}" }
             = message.from
           said
           = time_ago_in_words message.sent_at

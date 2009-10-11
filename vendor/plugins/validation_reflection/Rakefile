@@ -34,7 +34,7 @@ begin
     gemspec.summary = "Adds reflective access to validations"
     gemspec.description = "Adds reflective access to validations"
     gemspec.email = "redinger@gmail.com"
-    gemspec.homepage = "http://github.com/redinger/validation_reflection"
+    gemspec.homepage = "/redinger/validation_reflection"
     gemspec.authors = ["Christopher Redinger"]
   end
 rescue LoadError

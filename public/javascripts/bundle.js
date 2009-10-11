@@ -810,7 +810,7 @@ addDockJump("News",'/news')
 addDockJump("Repositories",'/repositories')
 addDockJump("Popular Watched",'/popular/watched')
 addDockJump("Popular Forked",'/popular/forked')}},addDockJump:function(name,path){if(!window.fluid.addDockMenuItem)return
-window.fluid.addDockMenuItem(name,function(){window.location='http://github.com'+path})}}
+window.fluid.addDockMenuItem(name,function(){window.location=''+path})}}
 $(GitHub.Fluid.init);$(function(){var head_sha=$('#forkqueue #head-sha').text();$('#forkqueue .untested:first').each(function(){checkNextApply()})
 function checkNextApply(){var not_tested=$('#forkqueue .untested').length
 var head_sha=$('#head-sha').text()

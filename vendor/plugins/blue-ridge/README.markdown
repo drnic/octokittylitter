@@ -61,7 +61,7 @@ Directory Layout: Specs and Fixtures
 
 Blue Ridge creates a directory for your JavaScript specs in one of the following directories, depending on which tool you use to test your Ruby code:
 
-* examples/javascripts: if you're using [Micronaut](http://github.com/spicycode/micronaut)
+* examples/javascripts: if you're using [Micronaut](/spicycode/micronaut)
 * spec/javascripts: if you're using [RSpec](http://rspec.info/)
 * test/javascript: if you're using anything else
 
@@ -137,7 +137,7 @@ Note that you must do the following:
 More Examples
 -------------
 
-To see Blue Ridge in action inside a working Rails app, check out the [Blue Ridge sample application](http://github.com/relevance/blue-ridge-sample-app).  Among other things, this sample app includes examples of:
+To see Blue Ridge in action inside a working Rails app, check out the [Blue Ridge sample application](/relevance/blue-ridge-sample-app).  Among other things, this sample app includes examples of:
 
 * using nested `describe` functions
 * setting up per-spec HTML "fixtures"
@@ -203,7 +203,7 @@ Smoke is a JavaScript mocking and stubbing toolkit that is somewhat similar to F
 
 TextMate Integration
 --------------------
-Run your specs directory from TextMate using the [Blue Ridge TextMate Bundle](http://github.com/karnowski/blue-ridge-tmbundle).  (It's a fork of the original [Screw.Unit TextMate Bundle](http://github.com/coreyti/screw-unit-tmbundle) but adapted for use with the Blue Ridge plugin.)
+Run your specs directory from TextMate using the [Blue Ridge TextMate Bundle](/karnowski/blue-ridge-tmbundle).  (It's a fork of the original [Screw.Unit TextMate Bundle](/coreyti/screw-unit-tmbundle) but adapted for use with the Blue Ridge plugin.)
 
     cd ~/Library/Application Support/TextMate/Bundles/
     git clone git://github.com/karnowski/blue-ridge-tmbundle.git Blue\ Ridge.tmbundle
@@ -219,19 +219,19 @@ Tips & Tricks
 
 Bugs & Patches
 --------------
-First, if you see any bugs or possible improvements, please use the project's [GitHub issue tracker](http://github.com/relevance/blue-ridge/issues) to let us know about them.
+First, if you see any bugs or possible improvements, please use the project's [GitHub issue tracker](/relevance/blue-ridge/issues) to let us know about them.
 
-But even better, fork our [GitHub repo](http://www.github.com/relevance/blue-ridge) and start hacking!  If you have patches, send us pull requests.  Also, [env.js](http://github.com/thatcher/env-js), [Smoke](http://github.com/andykent/smoke), and [Screw.Unit](http://github.com/nkallen/screw-unit) could use your love too!
+But even better, fork our [GitHub repo](http://www.github.com/relevance/blue-ridge) and start hacking!  If you have patches, send us pull requests.  Also, [env.js](/thatcher/env-js), [Smoke](/andykent/smoke), and [Screw.Unit](/nkallen/screw-unit) could use your love too!
 
 Links
 -------------
-* [Blue Ridge JavaScript Testing Rails Plugin](http://github.com/relevance/blue-ridge)
-* [Blue Ridge Sample App](http://github.com/relevance/blue-ridge-sample-app)
+* [Blue Ridge JavaScript Testing Rails Plugin](/relevance/blue-ridge)
+* [Blue Ridge Sample App](/relevance/blue-ridge-sample-app)
 * [Justin Gehtland's "Fully Headless JSSpec" Blog Post](http://blog.thinkrelevance.com/2008/7/31/fully-headless-jsspec)
-* [Screw.Unit](http://github.com/nkallen/screw-unit)
+* [Screw.Unit](/nkallen/screw-unit)
 * [Screw.Unit Mailing List](http://groups.google.com/group/screw-unit)
-* [Smoke](http://github.com/andykent/smoke)
-* [env.js](http://github.com/thatcher/env-js)
+* [Smoke](/andykent/smoke)
+* [env.js](/thatcher/env-js)
 * [env.js Mailing List](http://groups.google.com/group/envjs)
 * [Mozilla Rhino](http://www.mozilla.org/rhino/)
 * [W3C DOM Specifications](http://www.w3.org/DOM/DOMTR)

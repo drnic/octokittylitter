@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
      "test/validation_reflection_test.rb",
      "validation_reflection.gemspec"
   ]
-  s.homepage = %q{http://github.com/redinger/validation_reflection}
+  s.homepage = %q{/redinger/validation_reflection}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
