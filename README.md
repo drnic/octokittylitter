@@ -13,10 +13,14 @@ but you controlled the internal data.
 
 Why "Octo Kitty Litter"? It's the Sandbox for Github's Octocat.
 
-Currently, only two features of GitHub have been implemented: registration/login, and the
-inbox/mail system.
+## Implemented Features
 
-# Installation
+Currently, only the following features of GitHub have been implemented: 
+
+* registration/login
+* inbox/mail system
+
+## Installation
 
 This is a Rails app. Install it and run it however you want.
 
@@ -28,7 +32,7 @@ to a known port number. For example:
 Then during your integration tests, target `http://localhost:3030` instead of the normal `http://github.com`
 you'd use during production.
 
-# License
+## License
 
 (The MIT License)
 
