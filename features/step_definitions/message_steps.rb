@@ -17,3 +17,10 @@ Given /^I have the following messages:$/ do |table|
     response.should_not contain("New message")
   end
 end
+
+When /^I delete the conversation$/ do
+  if current_url =~ %r{/(\d+)}
+    post "/inbox/#{$1}", "_method" => "delete"
+  end
+end
+

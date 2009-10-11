@@ -45,6 +45,13 @@ class InboxController < ApplicationController
     Conversation.destroy_all
     redirect_to(inbox_index_path)
   end
+  
+  def destroy
+    if @conversation = Conversation.find(params[:id])
+      @conversation.destroy
+    end
+    redirect_to(inbox_index_path)
+  end
 
   def seed
     100.times {|n| Message.make(:from => current_user.login)}
