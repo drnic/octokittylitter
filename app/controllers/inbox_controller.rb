@@ -50,7 +50,11 @@ class InboxController < ApplicationController
     if @conversation = Conversation.find(params[:id])
       @conversation.destroy
     end
-    redirect_to(inbox_index_path)
+    respond_to do |wants|
+      wants.html { redirect_to(inbox_index_path) }
+      wants.js { render :nothing => true }
+    end
+    
   end
 
   def seed
