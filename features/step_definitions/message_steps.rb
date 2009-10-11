@@ -3,13 +3,13 @@ Given /^I have no messages$/ do
 end
 
 Given /^I have (\d+) messages in my "([^\"]*)" mailbox$/ do |count, mailbox|
-  count.to_i.times {|n| Message.make(:mailbox => mailbox)}
+  to_from = (mailbox == "inbox") ? "to" : "from"
+  count.to_i.times {|n| Message.make(to_from.to_sym => @login)}
 end
 
 When /^I add the following messages to "([^\"]*)" mailbox:$/ do |mailbox, table|
   table.hashes.map do |message_attributes|
     visit path_to('the new message form')
-    fill_in('mailbox', :with => mailbox)
     message_attributes.to_a.each do |field, value|
       fill_in(field, :with => value)
     end
