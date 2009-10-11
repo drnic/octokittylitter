@@ -1,59 +1,60 @@
-#profile.standard_form
-  %form#signup_form{ :action => "/users", :method => "post" }
-    %h1
-      Sign up
-      %a{ :href => "https://github.com/login" }
-        (log in)
-    %label{ :for => "login" }
-      Username
-      %br
-      %input#user_login.text{ :name => "user[login]", :size => "30", :type => "text", :style => "width: 25em;" }
-    %label{ :for => "user_email" }
-      Email Address
-      %br
-      %input#user_email.text{ :name => "user[email]", :size => "30", :type => "text", :style => "width: 25em;" }
-    %label{ :for => "password" }
-      Password
-      %br
-      %input#user_password.text{ :name => "user[password]", :size => "30", :type => "password", :value => "", :style => "width: 15em;" }
-    %label{ :for => "password_confirmation" }
-      Confirm Password
-      %br
-      %input#user_password_confirmation.text{ :name => "user[password_confirmation]", :size => "30", :type => "password", :value => "", :style => "width: 15em;" }
-    %label{ :for => "public_keys" }
-      SSH Public Key
-      %a{ :href => "https://github.com/guides/providing-your-ssh-key", :target => "_blank" }
-        (explain ssh keys)
-      %br
-      %small
-        Please enter one key only.  You may add more later.  This field is
+.site
+  #profile.standard_form
+    %form#signup_form{ :action => "/users", :method => "post" }
+      %h1
+        Sign up
+        %a{ :href => "https://github.com/login" }
+          (log in)
+      %label{ :for => "login" }
+        Username
+        %br
+        %input#user_login.text{ :name => "user[login]", :size => "30", :type => "text", :style => "width: 25em;" }
+      %label{ :for => "user_email" }
+        Email Address
+        %br
+        %input#user_email.text{ :name => "user[email]", :size => "30", :type => "text", :style => "width: 25em;" }
+      %label{ :for => "password" }
+        Password
+        %br
+        %input#user_password.text{ :name => "user[password]", :size => "30", :type => "password", :value => "", :style => "width: 15em;" }
+      %label{ :for => "password_confirmation" }
+        Confirm Password
+        %br
+        %input#user_password_confirmation.text{ :name => "user[password_confirmation]", :size => "30", :type => "password", :value => "", :style => "width: 15em;" }
+      %label{ :for => "public_keys" }
+        SSH Public Key
+        %a{ :href => "https://github.com/guides/providing-your-ssh-key", :target => "_blank" }
+          (explain ssh keys)
+        %br
+        %small
+          Please enter one key only.  You may add more later.  This field is
+          %strong
+            not required
+          to sign up.
+        %textarea#user_public_keys{ :name => "user[public_keys]", :rows => "20", :cols => "40", :style => "width: 54em; height: 6em;" }
+      %input#user_plan{ :name => "user[plan]", :type => "hidden", :value => "free" }
+      %div{ :style => "border: 1px solid rgb(136, 136, 136); padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; margin-top: 25px; width: 400px;" }
+        You're signing up for the
         %strong
-          not required
-        to sign up.
-      %textarea#user_public_keys{ :name => "user[public_keys]", :rows => "20", :cols => "40", :style => "width: 54em; height: 6em;" }
-    %input#user_plan{ :name => "user[plan]", :type => "hidden", :value => "free" }
-    %div{ :style => "border: 1px solid rgb(136, 136, 136); padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; margin-top: 25px; width: 400px;" }
-      You're signing up for the
-      %strong
-        free
-      plan.
+          free
+        plan.
       
       
       
-      If you have any questions please
-      %a{ :href => "mailto:support@github.com" }
-        email support
-      \.
-      %div{ :style => "margin-top: 1em;" }
-        %p{ :style => "padding: 0.3em; background: rgb(255, 252, 204) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; font-size: 1.1em; margin-bottom: 1em;" }
-          By signing up, you agree to the
-          %a{ :href => "https://github.com/site/terms" }
-            Terms of Service
-          ,
-          %a{ :href => "https://github.com/site/privacy" }
-            Privacy
-          , and
-          %a{ :href => "https://github.com/site/refund" }
-            Refund
-          policies.
-        %input#signup_button{ :type => "submit", :value => "I agree, sign me up!" }
+        If you have any questions please
+        %a{ :href => "mailto:support@github.com" }
+          email support
+        \.
+        %div{ :style => "margin-top: 1em;" }
+          %p{ :style => "padding: 0.3em; background: rgb(255, 252, 204) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; font-size: 1.1em; margin-bottom: 1em;" }
+            By signing up, you agree to the
+            %a{ :href => "https://github.com/site/terms" }
+              Terms of Service
+            ,
+            %a{ :href => "https://github.com/site/privacy" }
+              Privacy
+            , and
+            %a{ :href => "https://github.com/site/refund" }
+              Refund
+            policies.
+          %input#signup_button{ :type => "submit", :value => "I agree, sign me up!" }

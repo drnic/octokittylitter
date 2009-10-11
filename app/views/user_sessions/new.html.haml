@@ -1,21 +1,22 @@
-#login.standard_form
-  %form{ :action => "/session", :method => "post" }
-    %input{ :name => "return_to", :type => "hidden", :value => "" }
-    %h1
-      Login
-      %a{ :href => "/plans" }
-        (Pricing and Signup)
-    - if flash[:notice]
-      .error_box= flash[:notice]
-    %label{ :for => "login" }
-      Login or Email
-      %br
-      %input#login_field.text{ :tabindex => "1", :name => "login", :type => "text", :style => "width: 25em;" }
-    %label{ :for => "password" }
-      Password
-      %a{ :href => "/sessions/forgot_password" }
-        (forgot password)
-      %br
-      %input#password.text{ :tabindex => "2", :name => "password", :type => "password", :value => "", :style => "width: 25em;" }
-    %label
-      %input{ :tabindex => "3", :name => "commit", :type => "submit", :value => "Log in" }
+.site
+  #login.standard_form
+    %form{ :action => "/session", :method => "post" }
+      %input{ :name => "return_to", :type => "hidden", :value => "" }
+      %h1
+        Login
+        %a{ :href => "/plans" }
+          (Pricing and Signup)
+      - if flash[:notice]
+        .error_box= flash[:notice]
+      %label{ :for => "login" }
+        Login or Email
+        %br
+        %input#login_field.text{ :tabindex => "1", :name => "login", :type => "text", :style => "width: 25em;" }
+      %label{ :for => "password" }
+        Password
+        %a{ :href => "/sessions/forgot_password" }
+          (forgot password)
+        %br
+        %input#password.text{ :tabindex => "2", :name => "password", :type => "password", :value => "", :style => "width: 25em;" }
+      %label
+        %input{ :tabindex => "3", :name => "commit", :type => "submit", :value => "Log in" }
