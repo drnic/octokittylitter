@@ -6,13 +6,12 @@
     %title
       Your Inbox - GitHub
     %link{ :href => "/stylesheets/bundle.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %link{ :href => "/stylesheets/form.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %link{ :href => "/stylesheets/inbox.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
     %script{ :src => "/javascripts/jquery.js", :type => "text/javascript" }
     %script{ :type => "text/javascript", :src => "/javascripts/bundle.js" }
     %script{ :type => "text/javascript" }
       github_user = 'drnic'
-    %link{ :href => "/stylesheets/form.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
-    %link{ :href => "/stylesheets/inbox.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
-    = javascript_include_tag :all
     = yield(:head)
   %body
     #main
