@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :inbox, :collection => {
     :sent => :get,
     :seed => :get,
-    :create_reply => :post
+    :create_reply => :post,
+    :delete_messages => :post
   }
 end

@@ -40,6 +40,11 @@ class InboxController < ApplicationController
     flash[:notice] = "Your message has been sent."
     redirect_to(inbox_path(reply_to, :anchor => "reply"))
   end
+  
+  def delete_messages
+    Conversation.destroy_all
+    redirect_to(inbox_index_path)
+  end
 
   def seed
     100.times {|n| Message.make(:from => current_user.login)}

@@ -58,5 +58,7 @@
                 %li
                   %a{ :href => "/inbox/sent" }
                     Sent Messages
+                %li
+                  = button_to "Delete all messages", delete_messages_inbox_path
           = yield
       .push
