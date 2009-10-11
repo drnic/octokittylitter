@@ -1,18 +1,19 @@
 class Message < ActiveRecord::Base
+  attr_accessor :reply_to
   attr_accessor :sent_time_ago
+  
+  belongs_to :conversation
   
   named_scope :unread, :conditions => { :unread => true }
   named_scope :inbox, :conditions => {:mailbox => "inbox"}, :order => "sent_at DESC"
   named_scope :sent_mailbox, :conditions => {:mailbox => "sent"}, :order => "sent_at DESC"
   
-  validates_presence_of :mailbox
-  validates_presence_of :from_github_login
-  validates_presence_of :subject
+  validates_presence_of :to, :from
+  validates_presence_of :subject, :unless => :reply_to
   validates_presence_of :body
-  validates_presence_of :github_message_number
   validates_format_of :sent_time_ago, :with => /^(|\d+[\. ](minutes?|hours?|days?)[\. ]ago)$/
 
-  before_validation :increment_github_message_number
+  before_create :assign_to_conversation
   before_save :calculate_sent_at
 
   def calculate_sent_at
@@ -24,10 +25,20 @@ class Message < ActiveRecord::Base
     end
   end
   
-  def increment_github_message_number
-    last_message = Message.last 
-    next_number = last_message ? last_message.github_message_number.to_i + 1 : 1
-    self.github_message_number = next_number
+  def assign_to_conversation
+    if reply_to
+      reply_to = case reply_to
+      when Message
+        reply_to.conversation
+      when Conversation
+        reply_to
+      else
+        Conversation.find_by_id(reply_to) || Conversation.create
+      end
+      self.conversation = reply_to
+    else
+      self.conversation = Conversation.create
+    end
   end
   
   def to_param

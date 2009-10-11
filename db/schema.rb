@@ -9,18 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091010122514) do
+ActiveRecord::Schema.define(:version => 20091011001152) do
+
+  create_table "conversations", :force => true do |t|
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", :force => true do |t|
-    t.string   "from_github_login"
+    t.string   "to"
     t.datetime "sent_at"
     t.text     "body"
     t.string   "github_message_number"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "unread",                :default => true
-    t.string   "mailbox"
     t.string   "subject"
+    t.string   "from"
+    t.integer  "conversation_id"
   end
 
   create_table "sessions", :force => true do |t|
