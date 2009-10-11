@@ -7,7 +7,7 @@ Given /^I have (\d+) messages in my "([^\"]*)" mailbox$/ do |count, mailbox|
   count.to_i.times {|n| Message.make(to_from.to_sym => @login)}
 end
 
-When /^I add the following messages to "([^\"]*)" mailbox:$/ do |mailbox, table|
+Given /^I have the following messages:$/ do |table|
   table.hashes.map do |message_attributes|
     visit path_to('the new message form')
     message_attributes.to_a.each do |field, value|

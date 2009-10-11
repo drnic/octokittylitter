@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091011011743) do
+ActiveRecord::Schema.define(:version => 20091011014316) do
 
   create_table "conversations", :force => true do |t|
     t.integer  "number"
@@ -22,10 +22,9 @@ ActiveRecord::Schema.define(:version => 20091011011743) do
     t.string   "to"
     t.datetime "sent_at"
     t.text     "body"
-    t.string   "github_message_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "unread",                :default => true
+    t.boolean  "unread",          :default => true
     t.string   "from"
     t.integer  "conversation_id"
   end

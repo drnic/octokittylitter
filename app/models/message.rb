@@ -1,9 +1,8 @@
 class Message < ActiveRecord::Base
   attr_accessor :reply_to, :sent_time_ago, :subject
+  attr_writer :number
   
   belongs_to :conversation
-  
-  delegate :number, :to => :conversation
   
   named_scope :unread, :conditions => { :unread => true }
   named_scope :inbox_for, lambda { |login| 
@@ -21,6 +20,11 @@ class Message < ActiveRecord::Base
   before_create :assign_to_conversation
   before_save :calculate_sent_at
 
+  # the Message might hold the conversation number temporarily from a form before assigning to Conversation
+  def number
+    @number || (conversation.try(:number))
+  end
+  
   def calculate_sent_at
     if sent_time_ago.blank?
       self.sent_at = 0.days.ago
@@ -42,11 +46,7 @@ class Message < ActiveRecord::Base
       end
       self.conversation = reply_to
     else
-      self.conversation = Conversation.create(:subject => subject)
+      self.conversation = Conversation.create(:subject => subject, :id => number)
     end
-  end
-  
-  def to_param
-    github_message_number.to_s
   end
 end
