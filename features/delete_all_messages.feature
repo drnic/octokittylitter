@@ -1,6 +1,6 @@
-Feature: Delete user messages
+Feature: Delete all messages
   In order to reduce cost of deleting messages
-  I want to delete all my messages
+  I want to delete all messages
 
   Scenario: User deletes all messages
     Given I am logged in as "drnic"
