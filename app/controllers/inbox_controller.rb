@@ -1,4 +1,6 @@
 class InboxController < ApplicationController
+  before_filter :require_user
+  
   def index
     @mailbox = "inbox"
     @messages = Message.inbox_for(current_user.login).paginate :page => params[:page], :per_page => 10
