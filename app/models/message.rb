@@ -35,8 +35,8 @@ class Message < ActiveRecord::Base
   end
   
   def assign_to_conversation
-    if reply_to
-      reply_to = case reply_to
+    self.conversation = if reply_to
+      case reply_to
       when Message
         reply_to.conversation
       when Conversation
@@ -44,9 +44,8 @@ class Message < ActiveRecord::Base
       else
         Conversation.find_by_id(reply_to) || Conversation.create
       end
-      self.conversation = reply_to
     else
-      self.conversation = Conversation.create(:subject => subject, :id => number)
+      Conversation.create(:subject => subject, :id => number)
     end
   end
 end

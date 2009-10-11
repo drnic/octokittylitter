@@ -12,7 +12,7 @@ class InboxController < ApplicationController
   end
 
   def show
-    @message = Conversation.find(params[:id])
+    @conversation = Conversation.find(params[:id])
     render :action => :show, :layout => "envelope"
   end
 

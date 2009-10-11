@@ -33,6 +33,29 @@ describe Message do
       subject.sent_at.to_s.should == 0.days.ago.to_s
     end
   end
+
+  context "created without replying" do
+    subject { Message.create(:from => "drnic", :to => "defunkt", :subject => "subject", :body => "body")}
+    it { should be_valid }
+  end
   
-  # con
+  context "created as a reply" do
+    before do
+      @message = Message.create(:from => "drnic", :to => "defunkt", :subject => "subject", :body => "body")
+    end
+    subject { Message.create(:from => "defunkt", :to => "drnic", :reply_to => @message.conversation, :body => "response")}
+    it { should be_valid }
+    it { subject.conversation.messages.should == [@message, subject] }
+  end
+  
+  context "inbox_for & sent_from" do
+    before do
+      @to = Message.make(:to => "drnic", :from => "defunkt")
+      @from = Message.make(:from => "drnic", :to => "defunkt")
+    end
+    it { Message.inbox_for("drnic").should include(@to) }
+    it { Message.inbox_for("defunkt").should_not include(@to) }
+    it { Message.sent_from("drnic").should_not include(@to) }
+    it { Message.sent_from("defunkt").should include(@to) }
+  end
 end
