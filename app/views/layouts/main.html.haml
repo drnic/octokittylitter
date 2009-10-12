@@ -5,12 +5,12 @@
     %meta{ :content => "chrome=1", "http-equiv" => "X-UA-Compatible" }
     %title
       Your Dashboard - GitHub
-    %link{ :href => "https://github.com/opensearch.xml", :title => "GitHub", :rel => "search", :type => "application/opensearchdescription+xml" }
-    %link{ :href => "https://github.com/fluidicon.png", :title => "GitHub", :rel => "fluid-icon" }
+    %link{ :href => "/opensearch.xml", :title => "GitHub", :rel => "search", :type => "application/opensearchdescription+xml" }
+    %link{ :href => "/fluidicon.png", :title => "GitHub", :rel => "fluid-icon" }
     %link{ :href => "/stylesheets/bundle.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
     %script{ :src => "/javascripts/jquery.js", :type => "text/javascript" }
     %script{ :type => "text/javascript", :src => "/javascripts/bundle.js" }
-    %link{ :href => "https://github.com/drnic.private.atom?token=6c131adb79448cb80d166b448c446fb2", :title => "ATOM", :rel => "alternate", :type => "application/atom+xml" }
+    %link{ :href => "/drnic.private.atom?token=6c131adb79448cb80d166b448c446fb2", :title => "ATOM", :rel => "alternate", :type => "application/atom+xml" }
     %script{ :type => "text/javascript" }
       github_user = 'drnic'
     = yield(:head)
@@ -19,35 +19,35 @@
       #header.basic
         .site
           .logo
-            %a{ :href => "https://github.com/" }
+            %a{ :href => "/" }
               %img{ :src => "/images/logov3.png", :alt => "github" }
           .userbox
             .inner
               .avatarname
-                %a{ :href => "http://github.com/drnic" }
+                %a{ :href => "/drnic" }
                   %img{ :src => "/images/blank_gravatar.png", :height => "20", :alt => "", :width => "20" }
-                %a.name{ :href => "http://github.com/drnic" }
+                %a.name{ :href => "/drnic" }
                   = current_user.login
               %ul.usernav
                 %li
-                  %a{ :href => "https://github.com/" }
+                  %a{ :href => "/" }
                     Dashboard
                 %li
-                  %a{ :href => "https://github.com/inbox" }
+                  %a{ :href => "/inbox" }
                     Inbox
-                  %a.unread_count.new_messages{ :href => "https://github.com/inbox" }
-                    119
+                  %a.unread_count.new_messages{ :href => "/inbox" }
+                    = Message.unread.inbox_for(current_user.login).count
                 %li
-                  %a{ :href => "https://github.com/account" }
+                  %a{ :href => "/account" }
                     Account Settings
                 %li
-                  %a{ :href => "https://github.com/logout" }
+                  %a{ :href => "/logout" }
                     Log Out
           /
             \/.userbox
           .topsearch
             %form#top_search_form{ :action => "/search", :method => "get" }
-              %a.advanced-search{ :href => "https://github.com/search", :title => "Advanced Search" }
+              %a.advanced-search{ :href => "/search", :title => "Advanced Search" }
                 Advanced Search
               %input.search.repo_autocompleter.notnative.placeholder.ac_input{ :results => "5", :name => "q", :placeholder => "Search GitHub\342\200\246", :autocomplete => "off", :type => "search" }
               <input value="Search" ,="" class="button" type="submit">
@@ -57,13 +57,13 @@
               %input{ :name => "start_value", :type => "hidden", :value => "1" }
             %ul.nav
               %li
-                %a{ :href => "https://github.com/repositories" }
+                %a{ :href => "/repositories" }
                   Explore GitHub
               %li
                 %a{ :href => "http://gist.github.com/" }
                   Gist
               %li
-                %a{ :href => "https://github.com/blog" }
+                %a{ :href => "/blog" }
                   Blog
               %li
                 %a{ :href => "http://help.github.com/" }
@@ -74,17 +74,17 @@
       .site
         .info
           .links
-            %a{ :href => "http://github.com/blog" }
+            %a{ :href => "/blog" }
               %b
                 Blog
             |
             %a{ :href => "http://support.github.com/" }
               Support
             |
-            %a{ :href => "http://github.com/training" }
+            %a{ :href => "/training" }
               Training
             |
-            %a{ :href => "http://github.com/contact" }
+            %a{ :href => "/contact" }
               Contact
             |
             %a{ :href => "http://develop.github.com/" }
@@ -96,7 +96,7 @@
             %a{ :href => "http://twitter.com/github" }
               GitHub on Twitter
             |
-            %a{ :href => "http://github.com/guides/home" }
+            %a{ :href => "/guides/home" }
               Help
           .company
             %span#_rrt{ :title => "0.06161s from fe3.rs.github.com" }
@@ -106,10 +106,10 @@
             %a{ :href => "http://logicalawesome.com/" }
               Logical Awesome
             ©2009 |
-            %a{ :href => "https://github.com/site/terms" }
+            %a{ :href => "/site/terms" }
               Terms of Service
             |
-            %a{ :href => "https://github.com/site/privacy" }
+            %a{ :href => "/site/privacy" }
               Privacy Policy
         .sponsor
           %div
