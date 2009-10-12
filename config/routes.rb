@@ -15,4 +15,5 @@ ActionController::Routing::Routes.draw do |map|
     :create_reply => :post,
     :delete_messages => :post
   }
+  map.resources :dashboard
 end
