@@ -1,10 +1,17 @@
 # Octo Kitty Litter - GitHub Sandbox
 
-<img width="30%" style="float: right" src="http://octokittylitter.heroku.com/images/octokittylitter.png"/>
-
-* This is not the real GitHub. 
-* It's a sample sandbox.
-* An aide to integration testing.
+<table border=0>
+  <tbody>
+    <tr>
+      <td>
+        <li>This is not the real GitHub.</li>
+        <li>It's a sample sandbox.</li>
+        <li>An aide to integration testing.</li>
+      </td>
+      <td><img height="160px" src="http://octokittylitter.heroku.com/images/octokittylitter.png"/></td>
+    </tr>
+  </tbody>
+</table>
 
 Say you wanted to build a third party GitHub service that interacted
 with either the Github APIs or the website itself, then you'd just
