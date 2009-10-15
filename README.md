@@ -1,5 +1,7 @@
 # Octo Kitty Litter - GitHub Sandbox
 
+<img width="30%" style="float: right" src="http://octokittylitter.heroku.com/images/octokittylitter.png"/>
+
 * This is not the real GitHub. 
 * It's a sample sandbox.
 * An aide to integration testing.
