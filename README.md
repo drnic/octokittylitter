@@ -22,6 +22,8 @@ with either the Github APIs or the website itself, then you'd just
 love to have a Sandbox - a fake Github site that behaved like Github
 but you controlled the internal data.
 
+<img src="http://img.skitch.com/20091015-pc8cmxppkkhui6pc2yy2j7pfbn.png" width="100%" />
+
 [Octo Kitty Litter](http://github.com/drnic/octokittylitter) is that Sandbox.
 
 Why "Octo Kitty Litter"? It's the Sandbox for Github's Octocat.
