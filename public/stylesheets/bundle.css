@@ -345,7 +345,7 @@ body{text-align:center;}
 #home .headline h1,#home .headline h2{text-align:center;font-weight:normal;}
 #home .headline h1{font-size:240%;color:#133855;}
 #home .headline h2{font-size:150%;color:#133855;}
-#home .features{border-top:5px solid #ddd;background-color:#edf2f6;overflow:hidden;padding:1em 2em 3em 2em;}
+#home .features{border-top:5px solid #ddd;background-color:#edf2f6;overflow:hidden;padding:1em 2em 9em 2em;}
 #home .features h3{font-size:150%;margin-top:1em;}
 #home .features p{font-size:120%;color:#444;padding-bottom:1em;}
 #home .features .left{margin-left:7em;float:left;width:25em;}

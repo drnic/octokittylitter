@@ -39,3 +39,23 @@
                 %a{ :href => "/login" }
                   Login
       = yield
+    #footer
+      .site
+        .info
+          .links
+            %a{ :href => "http://github.com" } GitHub
+            \- The Real Thing
+            |
+            %a{ :href => "http://github.com/drnic/octokittylitter" } Source
+          .company
+            %span GitHub
+            ™ is a trademark of 
+            %a{ :href => "http://logicalawesome.com/" } Logical Awesome
+            probably.
+        .sponsor
+          %div
+            Project initiated by <br />
+            <a href="http://drnicwilliams.com">Dr Nic Williams</a><br />
+            and <a href="http://mocra.com">Mocra</a>
+          %a{ :href => "http://mocra.com" }
+            %img{ :src => "http://mocra.com/images/logo.png", :height => "60px"}
