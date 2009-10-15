@@ -14,3 +14,13 @@ Feature: Compose new message
     And I follow "Sent Messages"
     Then I should see:
       | You sent | defunkt | a | message | less than a minute | ago | Sending a message | This is the body of the message |
+
+  Scenario: Missing required fields
+    Given I am logged in as "drnic"
+    When I follow "Compose "
+    And I press "Send"
+    Then I should see "Failed to save because body can't be blank and to can't be blank."
+    And I should not see "Your message has been sent."
+  
+  
+  

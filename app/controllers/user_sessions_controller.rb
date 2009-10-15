@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_to(inbox_index_path)
     else
-      flash[:notice] = 'Incorrect login or password.'
+      flash.now[:error] = 'Incorrect login or password.'
       render :action => "new"
     end
   end

@@ -1,6 +1,8 @@
 .write
   %h1
     Compose Message
+  - if flash[:error]
+    .error_box= flash[:error]
   %form#new_message.new_message{ :action => "/inbox", :method => "post" }
     .buttons.buttons-top
       %input#message_submit.send{ :name => "commit", :type => "submit", :value => "Send" }

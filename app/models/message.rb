@@ -13,7 +13,6 @@ class Message < ActiveRecord::Base
   }
 
   validates_presence_of :to, :from
-  validates_presence_of :subject, :unless => :reply_to
   validates_presence_of :body
   validates_format_of :sent_time_ago, :with => /^(|\d+[\. ](minutes?|hours?|days?)[\. ]ago)$/
 

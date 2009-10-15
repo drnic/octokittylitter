@@ -25,6 +25,7 @@ class InboxController < ApplicationController
       flash[:notice] = "Your message has been sent."
       redirect_to(inbox_index_path)
     else
+      flash.now[:error] = "Failed to save because #{@message.errors.full_messages.join(' and ').downcase}."
       render :action => "new"
     end
   end
