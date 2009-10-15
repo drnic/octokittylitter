@@ -8,7 +8,11 @@
         <li>It's a sample sandbox.</li>
         <li>An aide to integration testing.</li>
       </td>
-      <td><img height="160px" src="http://octokittylitter.heroku.com/images/octokittylitter.png"/></td>
+      <td>
+        <a href="http://octokittylitter.heroku.com/">
+          <img border=0 height="160px" src="http://octokittylitter.heroku.com/images/octokittylitter.png"/>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
